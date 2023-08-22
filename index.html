@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Pong Game</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootrap_custom.css">
+	</head>
+	<body>		
+		<!-- Score -->
+		<div id="scoreboard">
+			<h1 id="score" data-text="0-0">0-0</h1>
+		</div>
+
+		<!-- Pause symbol -->
+		<div id="pause">
+			<h1 id="pauseText">&#9646;&#9646;</h1>
+		</div>
+
+		<!-- Controls help -->
+		<div id="leftPlayerControls">
+			<img src="./images/keyboard_keys/keyboard_key_w.png" alt="Move up" id="key_w_img"><br>
+			<img src="./images/keyboard_keys/keyboard_key_s.png" alt="Move down" id="key_s_img">
+		</div>
+		<div id="rightPlayerControls">
+			<img src="./images/keyboard_keys/keyboard_key_up.png" alt="Move up" id="key_up_img"><br>
+			<img src="./images/keyboard_keys/keyboard_key_down.png" alt="Move down" id="key_down_img">
+		</div>
+
+		<!-- Help -->
+		<div id="goal_help">
+			<p id="win_score_text">First player to score x goals wins!</p>
+		</div>
+
+		<div id="pause_help">
+			<p>Click <img src="./images/keyboard_keys/keyboard_key_esc.png" alt="Pause" id="key_esc_img"> to <span id="pause_help_text">PAUSE</span> the game.</p>
+		</div>
+
+		<!-- Settings -->
+		<div id="toggle_buttons">
+			<input type="radio" class="btn-check" name="options-outlined" id="two_players_button" autocomplete="off" onchange="changeNumberOfPlayers()" checked>
+			<label class="btn btn-lg btn-outline-light" for="two_players_button">2 players</label>
+			<input type="radio" class="btn-check" name="options-outlined" id="one_player_button" autocomplete="off" onchange="changeNumberOfPlayers()">
+			<label class="btn btn-lg btn-outline-light" for="one_player_button">1 player</label>
+		</div>
+
+		<div id="toggle_buttons_difficulty">
+			<input type="radio" class="btn-check" name="difficulty" id="easyButton" autocomplete="off" onchange="changeDifficulty('easy')">
+			<label class="btn btn-easy btn-sm" for="easyButton">Easy</label>
+			<input type="radio" class="btn-check" name="difficulty" id="mediumButton" autocomplete="off" onchange="changeDifficulty('medium')" checked>
+			<label class="btn btn-medium btn-sm" for="mediumButton">Medium</label>
+			<input type="radio" class="btn-check" name="difficulty" id="hardButton" autocomplete="off" onchange="changeDifficulty('hard')">
+			<label class="btn btn-hard btn-sm" for="hardButton">Hard</label>
+			<input type="radio" class="btn-check" name="difficulty" id="expertButton" autocomplete="off" onchange="changeDifficulty('expert')">
+			<label class="btn btn-expert btn-sm" for="expertButton">Expert</label>
+		</div>
+
+		<div id="toggle_buttons_speed">
+			<input type="radio" class="btn-check" name="speed" id="slowButton" autocomplete="off" onchange="changeSpeed('slow')">
+			<label class="btn btn-outline-light btn-sm" for="slowButton">Slow</label>
+			<input type="radio" class="btn-check" name="speed" id="averageButton" autocomplete="off" onchange="changeSpeed('average')" checked>
+			<label class="btn btn-outline-light btn-sm" for="averageButton">Average</label>
+			<input type="radio" class="btn-check" name="speed" id="fastButton" autocomplete="off" onchange="changeSpeed('fast')">
+			<label class="btn btn-outline-light btn-sm" for="fastButton">Fast</label>
+			<input type="radio" class="btn-check" name="speed" id="ultraFastButton" autocomplete="off" onchange="changeSpeed('ultraFast')">
+			<label class="btn btn-outline-light btn-sm" for="ultraFastButton">Ultra Fast</label>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="gameOverModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h2 class="modal-title w-100" id="gameOverModalTitle">GAME OVER!</h2>
+					<button type="button" class="close" onclick="closeGameOverModal()" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+					<p id="game_over_text">Player X wins!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-light" onclick="closeGameOverModal()">Play Again!</button>
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<!-- Buttons -->
+		<button type="button" class="btn btn-outline-light btn-sm" id="help_button" onclick="hideOrShowHelp()">Hide help</button>
+		<div id="startButtonDiv">
+		<button type="button" class="btn btn-outline-light btn-lg" id="startButton" onclick="startGame()">START GAME!</button>
+		</div>
+		<button type="button" class="btn btn-outline-light btn-lg" id="soundButton" onclick="soundOnOff()"><img src="images/sound_img/no-sound.png" id="sound_img"></button>
+
+		<!-- Made by -->
+		<p id="made_by_text">&copy;Lukáš Kořínek</p>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/three.min.js"></script>
+		<script type="text/javascript" src="js/TrackballControls.js"></script>
+		<script type="text/javascript" src="js/stats.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

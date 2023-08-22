@@ -1,0 +1,194 @@
+body { 
+    margin: 0; 
+    background-color: black;
+}
+
+canvas {
+    width: 100%; height: 100% 
+}
+
+#pauseText {
+    font-size: 170px;
+    color: #fff;
+    visibility: hidden;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    text-align: center;
+}
+
+#pause_help {
+    position: absolute;
+    bottom: 3%;
+    left: 1%;
+    color: #fff;
+    font-size: 1.3ch;
+}
+
+#goal_help {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    color: #fff;
+    font-size: 1.3ch;
+}
+
+#leftPlayerControls {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+}
+
+#rightPlayerControls {
+    position: absolute;
+    top: 40%;
+    right: 3%;
+}
+
+img{
+    width: 5ch;
+    height: 5ch;
+}
+
+#players_settings{
+    position: absolute;
+    color: #fff;
+}
+
+#toggle_buttons{
+    position: absolute;
+    top: 83%;
+    width: 100%;
+    text-align: center;
+}
+
+#toggle_buttons_difficulty {
+    position: absolute;
+    top: 91%;
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+}
+
+#toggle_buttons_speed {
+    position: absolute;
+    top: 91%;
+    width: 100%;
+    text-align: center;
+    visibility: visible;
+}
+
+#help_button{
+    position: absolute;
+    bottom: 3%;
+    right: 2%;
+}
+
+#startButtonDiv {
+    position: absolute;
+    top: 47%;
+    width: 100%;
+    text-align: center;
+}
+
+#startButton {
+    background-color: black;
+}
+
+#startButton:hover {
+    color: #000000;
+    background-color: white;
+}
+
+#soundButton {
+    position: absolute;
+    bottom: 8%;
+    right: 2%;
+    background-color: black;
+}
+
+#soundButton:hover {
+    background-color: white;
+}
+
+#sound_img {
+    width: 1.5ch;
+    height: 2ch;
+}
+
+#made_by_text {
+    color: #fff;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-weight: lighter;
+    font-size: 1.3ch;
+}
+
+#gameOverModal {
+    color: #fff;
+}
+
+.modal-content {
+    background-color: black;
+    border:white 2px solid;
+}
+
+.modal-footer {
+    border-top: black 1px solid;
+}
+
+@font-face {
+    font-family: scoreFont;
+    src: url(../fonts/Ozone-xRRO.ttf);
+}
+
+#scoreboard {
+    background-color: black;
+    width: 100px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*font-family: scoreFont;*/
+}
+
+h1 {
+    text-align: center;
+}
+
+#score {
+    position: absolute;
+    top: 15%;
+    left: 50.7%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding: 0px 0px;
+    font-size: 143px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: scoreFont;
+    color: #fff;
+    text-shadow: 0 0 20px #ffffff;
+}
+
+#score::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0px;
+    z-index: -1;
+    color: #ffffff;
+    filter:blur(80px);
+}
+
+#score:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(120px);
+}
